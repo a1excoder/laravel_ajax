@@ -28,11 +28,15 @@
             error: function (data) {
                 alert('data not uploaded');
                 btn.prop("disabled", false);
+                
                 var errors = JSON.parse(data.responseText);
                 document.getElementById("form-errors").innerText = errors.errors;
+                
                 for (var error = 0; error < errors.errors['length']; error++) {
                     console.log(errors.errors[error]);
                 }
+                
+                
             }
         })
     }
